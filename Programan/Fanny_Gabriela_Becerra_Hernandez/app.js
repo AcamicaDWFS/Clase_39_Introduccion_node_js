@@ -21,11 +21,12 @@ const mainFunction = (logger) => {
 
         start = () => {
             interface.question(`${separator}Selecciona la operación que quieres realizar:\n1. ${opp[1][0]}\n2. ${opp[2][0]}\n3. ${opp[3][0]}\n4. ${opp[4][0]}\n\nSelección: `, function(oppType) {
-                if (oppType > 4) {
+                let val = parseInt(oppType);
+                if (val > 4) {
                     console.log('\n!!!Sólo puedes ingresar una de las cuatro opciones. Intenta nuevamente.');
                     start();
                 } else {
-                    number(oppType);
+                    number(val);
                 }
             })
         },
